@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="The Signature Scent Finder helps customers in Qatar discover a fragrance profile and request personalized perfume suggestions on WhatsApp."
+    />
+    <title>The Signature Scent Finder</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <div class="ambient ambient-one"></div>
+      <div class="ambient ambient-two"></div>
+
+      <main class="app-card" id="app" aria-live="polite">
+        <section class="screen welcome-screen active" data-screen="welcome">
+          <div class="eyebrow">Premium perfume concierge</div>
+          <h1>The Signature Scent Finder</h1>
+          <p class="subtitle">
+            Discover the fragrance profile that matches your taste, lifestyle,
+            and occasion.
+          </p>
+          <p class="intro">
+            Not sure which perfume suits you? Answer a few simple questions and
+            let us find your signature scent.
+          </p>
+
+          <button class="button button-primary" id="startButton">
+            Start Assessment
+          </button>
+
+          <a
+            class="social-link"
+            href="https://www.instagram.com/perfumecart.qa?igsh=Z3o4Mmo2OTBkZHdw"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Visit us on Instagram @perfumecart.qa
+          </a>
+
+          <p class="trust-line">
+            Free assessment | Same-day delivery across Qatar | Personalized
+            suggestions
+          </p>
+        </section>
+
+        <section class="screen question-screen" data-screen="question">
+          <header class="question-header">
+            <div class="progress-meta">
+              <button
+                class="icon-button"
+                id="backButton"
+                type="button"
+                aria-label="Go back"
+              >
+                <span aria-hidden="true">&larr;</span>
+              </button>
+              <div>
+                <p class="step-label" id="stepLabel">Question 1 of 8</p>
+                <div
+                  class="progress-bar"
+                  role="progressbar"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                  aria-valuenow="0"
+                  aria-label="Assessment progress"
+                >
+                  <span id="progressFill"></span>
+                </div>
+              </div>
+            </div>
+          </header>
+
+          <div class="question-card" id="questionCard">
+            <div class="question-copy">
+              <p class="question-tag" id="questionTag">Scent preference</p>
+              <h2 id="questionText"></h2>
+              <p class="question-helper" id="questionHelper"></p>
+            </div>
+
+            <div class="options-grid" id="optionsContainer"></div>
+          </div>
+
+          <div class="footer-actions">
+            <button class="button button-secondary" id="restartButton" type="button">
+              Restart
+            </button>
+          </div>
+        </section>
+
+        <section class="screen result-screen" data-screen="result">
+          <div class="result-hero">
+            <div class="result-badge">Your personalized result</div>
+            <h2>Your Scent Profile:</h2>
+            <h3 id="resultName"></h3>
+            <p class="result-description" id="resultDescription"></p>
+          </div>
+
+          <article class="personality-feature">
+            <p class="detail-label">Your scent personality</p>
+            <p class="personality-copy" id="resultPersonality"></p>
+          </article>
+
+          <div class="result-panels">
+            <article class="detail-panel">
+              <p class="detail-label">Recommended perfume family</p>
+              <div class="chip-list" id="resultFamilyChips"></div>
+            </article>
+            <article class="detail-panel">
+              <p class="detail-label">Best for</p>
+              <div class="chip-list" id="resultBestForChips"></div>
+            </article>
+            <article class="detail-panel">
+              <p class="detail-label">Profile details</p>
+              <div class="result-meta">
+                <div class="meta-row">
+                  <span class="meta-key">Budget</span>
+                  <span class="meta-value" id="summaryBudget"></span>
+                </div>
+                <div class="meta-row">
+                  <span class="meta-key">For whom</span>
+                  <span class="meta-value" id="summaryRecipient"></span>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <a
+            class="button button-primary whatsapp-button"
+            id="whatsAppButton"
+            href="#"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Get My Perfume Suggestions on WhatsApp
+          </a>
+
+          <p class="trust-note">
+            We do not ask for payment during the assessment. Our team will
+            suggest suitable options based on your scent profile and available
+            stock.
+          </p>
+
+          <a
+            class="social-link social-link-result"
+            href="https://www.instagram.com/perfumecart.qa?igsh=Z3o4Mmo2OTBkZHdw"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Explore more on Instagram @perfumecart.qa
+          </a>
+
+          <div class="footer-actions result-actions">
+            <button class="button button-secondary" id="editAnswersButton" type="button">
+              Back to Answers
+            </button>
+            <button class="button button-ghost" id="restartResultButton" type="button">
+              Restart Assessment
+            </button>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
